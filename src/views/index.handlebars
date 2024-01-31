@@ -1,0 +1,14 @@
+<div>
+  <h1>Productos</h1>
+  <a href="/realTimeProducts">agregar producto</a>
+  <ul id="product-list">
+    {{#each products}}
+      <li>
+        {{description}} - ${{price}} {{pid}} 
+      </li>
+    {{/each}}
+  </ul>
+</div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

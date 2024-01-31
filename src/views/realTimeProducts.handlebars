@@ -1,0 +1,22 @@
+<!-- realTimeProducts.handlebars -->
+<h1>Lista de Productos</h1>
+<a href="/">Ver productos</a>
+<ul id="productList">
+    {{#each products}}
+        <li>
+            {{description}} - ${{price}} {{pid}}
+            <button class="delete-btn" data-product-id="{{pid}}">Eliminar</button>
+        </li>
+    {{/each}}
+</ul>
+
+<form id="productForm" action="/addProduct" method="post">
+    <label for="productName">Nombre:</label>
+    <input type="text" id="productName" name="productName" required>
+    <label for="productPrice">Precio:</label>
+    <input type="number" id="productPrice" name="productPrice" required>
+    <button type="button" id="addProductBtn">Agregar Producto</button>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
